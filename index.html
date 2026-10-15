@@ -76,6 +76,7 @@
     .work-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:18px; }
     .work-card { overflow:hidden; border-radius:12px; background:var(--panel); border:1px solid var(--line); }
     .work-card img { width:100%; height:260px; object-fit:cover; object-position:center 18%; }
+    .work-card img.cafe-photo { object-position:center 5%; }
     .work-copy { padding:20px 21px 22px; }
     .work-copy h3 { margin:0 0 6px; font-size:1.15rem; }
     .work-copy p { margin:0; color:var(--muted); font-size:.94rem; }
@@ -83,14 +84,13 @@
     .video-card { overflow:hidden; border-radius:0; background:transparent; border:0; }
     .video-frame { position:relative; aspect-ratio:16/9; background:#05070a; }
     .video-frame iframe { position:absolute; inset:0; width:100%; height:100%; border:0; }
-    .process-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:15px; }
+    .process-grid { display:grid; grid-template-columns:repeat(4,minmax(0,190px)); justify-content:space-between; gap:18px; }
     .step { border-top:2px solid var(--blue); padding-top:16px; }
     .step b { display:block; margin-bottom:6px; font-size:1.02rem; }
     .step p { margin:0; color:var(--muted); font-size:.92rem; }
     .about { display:grid; grid-template-columns:.75fr 1.25fr; gap:40px; align-items:start; }
-    .about-mark { padding:26px; background:linear-gradient(135deg,#142235,#10141c); border:1px solid var(--line); border-radius:12px; }
-    .about-mark .big { font-size:4rem; line-height:1; font-weight:900; letter-spacing:-.08em; color:var(--blue-2); }
-    .about-mark p { color:var(--muted); margin-bottom:0; }
+    .about-mark { overflow:hidden; border:1px solid var(--line); border-radius:12px; background:var(--panel); }
+    .about-mark img { display:block; width:100%; height:100%; min-height:360px; max-height:480px; object-fit:cover; object-position:center 30%; }
     .about h2 { margin:0 0 16px; font-size:clamp(2rem,4vw,3rem); line-height:1.05; letter-spacing:-.05em; }
     .about p { color:#c0cad8; }
     .contact { background:linear-gradient(125deg,#10223a,#0d1118 68%); border-top:1px solid var(--line); }
@@ -119,6 +119,7 @@
       .hero { padding:42px 0; }
       h1 { font-size:clamp(2.8rem,13vw,4rem); }
       .hero-photo img { height:260px; }
+      .about-mark img { min-height:280px; max-height:420px; }
       section { padding:60px 0; }
       .services,.work-grid,.video-grid { grid-template-columns:1fr; }
       .work-card img { height:220px; }
@@ -155,7 +156,6 @@
         </div>
         <div class="hero-photo">
           <img src="https://jamesdrum1975.github.io/Images/workspace-with-editing-software-and-dual-monitors-2026-09-22-00-25-13-utc%20copy.jpg" alt="Video editing workspace with dual monitors" fetchpriority="high">
-          <div class="photo-label"><strong>From shoot to final cut.</strong> Content made with purpose.</div>
         </div>
       </div>
     </section>
@@ -218,7 +218,7 @@
             <div class="work-copy"><h3>Business & Brand Stories</h3><p>Video content designed to introduce a business, communicate its value and connect with its audience.</p></div>
           </article>
           <article class="work-card">
-            <img src="https://jamesdrum1975.github.io/Images/barista-serving-coffee-to-customer-in-cafe-2026-09-22-03-19-35-utc.jpg" alt="Cafe owner serving a customer" loading="lazy">
+            <img class="cafe-photo" src="https://jamesdrum1975.github.io/Images/barista-serving-coffee-to-customer-in-cafe-2026-09-22-03-19-35-utc.jpg" alt="Cafe owner serving a customer" loading="lazy">
             <div class="work-copy"><h3>Local Business Content</h3><p>People, products and everyday moments that help customers get to know a business.</p></div>
           </article>
           <article class="work-card">
@@ -263,8 +263,7 @@
     <section id="about">
       <div class="wrap about">
         <div class="about-mark">
-          <div class="big">JD.</div>
-          <p>Independent video production, editing and content support from Southeast Michigan.</p>
+          <img src="https://jamesdrum1975.github.io/Images/James%20Headshot.png" alt="James Drum headshot" loading="lazy">
         </div>
         <div>
           <div class="eyebrow">A little about me</div>
