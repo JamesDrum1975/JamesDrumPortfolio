@@ -150,7 +150,7 @@
           <p class="lead">I'm James Drum, a video producer and editor based in Southeast Michigan. I help businesses, organizations and creators turn ideas, events and everyday moments into engaging video and social content.</p>
           <div class="hero-actions">
             <a class="btn" href="#work">Explore My Work <span aria-hidden="true">↘</span></a>
-            <a class="btn secondary" href="mailto:realdrumvideo@gmail.com">Contact James</a>
+            <a class="btn secondary email-link" href="mailto:realdrumvideo@gmail.com" data-gmail-to="realdrumvideo@gmail.com">Contact James</a>
           </div>
           <p class="hero-note">Available for local and remote projects</p>
         </div>
@@ -284,14 +284,14 @@
           <h2>Let's make something<br>worth watching</h2>
           <p>Tell me what you're working on, what kind of content you need, and what you're hoping to accomplish. I'll get back to you to discuss the next step.</p>
           <div class="contact-actions">
-            <a class="btn" href="mailto:realdrumvideo@gmail.com?subject=Video%20%26%20Content%20Project">Email James</a>
+            <a class="btn email-link" href="mailto:realdrumvideo@gmail.com?subject=Video%20%26%20Content%20Project" data-gmail-to="realdrumvideo@gmail.com" data-gmail-subject="Video & Content Project">Email James</a>
             <a class="btn secondary" href="https://www.youtube.com/@jd072975" target="_blank" rel="noopener">YouTube Channel ↗</a>
           </div>
         </div>
         <div>
           <div class="eyebrow">Get in touch</div>
           <p style="margin:8px 0 5px;color:#fff;font-weight:750;">James Drum</p>
-          <a href="mailto:realdrumvideo@gmail.com" style="color:#8ecbff;text-decoration:none;">realdrumvideo@gmail.com</a>
+          <a class="email-link" href="mailto:realdrumvideo@gmail.com" data-gmail-to="realdrumvideo@gmail.com" style="color:#8ecbff;text-decoration:none;">realdrumvideo@gmail.com</a>
           <p style="margin:14px 0 0;"><button class="btn secondary" id="copy-email" type="button" style="cursor:pointer;font:inherit;">Copy Email Address</button></p>
           <p style="font-size:.9rem;">Southeast Michigan · Local & remote projects</p>
         </div>
@@ -307,6 +307,23 @@
   </footer>
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
+
+    // On iPhone/iPad, open the Gmail app directly when it is installed.
+    // On other devices, keep the standard mailto link for the visitor's default email app.
+    const isAppleMobile = /iPhone|iPad|iPod/.test(navigator.userAgent) ||
+      (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
+    document.querySelectorAll('.email-link[data-gmail-to]').forEach((link) => {
+      link.addEventListener('click', (event) => {
+        if (!isAppleMobile) return;
+        event.preventDefault();
+        const to = encodeURIComponent(link.dataset.gmailTo);
+        const subject = link.dataset.gmailSubject
+          ? '&subject=' + encodeURIComponent(link.dataset.gmailSubject)
+          : '';
+        window.location.href = 'googlegmail:///co?to=' + to + subject;
+      });
+    });
+
     const copyEmailButton = document.getElementById('copy-email');
     copyEmailButton.addEventListener('click', async () => {
       const email = 'realdrumvideo@gmail.com';
