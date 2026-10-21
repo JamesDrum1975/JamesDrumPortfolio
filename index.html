@@ -88,6 +88,14 @@
     .step { border-top:2px solid var(--blue); padding-top:16px; }
     .step b { display:block; margin-bottom:6px; font-size:1.02rem; }
     .step p { margin:0; color:var(--muted); font-size:.92rem; }
+    .faq-list { max-width:900px; margin:0 auto; border-top:1px solid var(--line); }
+    .faq-item { border-bottom:1px solid var(--line); }
+    .faq-item summary { list-style:none; cursor:pointer; position:relative; padding:20px 42px 20px 0; font-weight:750; font-size:1.04rem; line-height:1.4; }
+    .faq-item summary::-webkit-details-marker { display:none; }
+    .faq-item summary::after { content:"+"; position:absolute; right:5px; top:50%; transform:translateY(-50%); color:var(--blue-2); font-size:1.6rem; font-weight:400; }
+    .faq-item[open] summary::after { content:"−"; }
+    .faq-answer { color:var(--muted); padding:0 36px 20px 0; max-width:800px; }
+    .faq-answer p { margin:0; }
     .about { display:grid; grid-template-columns:.75fr 1.25fr; gap:40px; align-items:start; }
     .about-mark { display:flex; align-items:center; justify-content:center; overflow:hidden; border:1px solid var(--line); border-radius:12px; background:var(--panel); padding:12px; }
     .about-mark img { display:block; width:auto; max-width:100%; height:auto; max-height:360px; min-height:0; object-fit:contain; object-position:center; }
@@ -136,6 +144,7 @@
       <nav class="navlinks" aria-label="Main navigation">
         <a href="#services">Services</a>
         <a href="#videos">Video Portfolio</a>
+        <a href="#faq">FAQs</a>
         <a href="#about">About</a>
         <a class="btn nav-cta" href="#contact">Contact</a>
       </nav>
@@ -260,6 +269,80 @@
           <div class="step"><b>02. Plan the content</b><p>We agree on the concept, format, shoot needs and deliverables.</p></div>
           <div class="step"><b>03. Create & refine</b><p>I produce or edit the content and work through feedback.</p></div>
           <div class="step"><b>04. Ready to publish</b><p>You receive finished files formatted for their intended use.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="faq" class="work-section">
+      <div class="wrap">
+        <div class="section-head">
+          <div>
+            <div class="eyebrow">Common Questions</div>
+            <h2>Frequently Asked Questions</h2>
+          </div>
+          <p>Helpful details about services, project timelines, pricing and getting started.</p>
+        </div>
+        <div class="faq-list">
+          <details class="faq-item">
+            <summary>1. What video production and content creation services do you offer?</summary>
+            <div class="faq-answer"><p>I offer video production, social media content creation, and video editing and post-production. Services include promotional videos, brand stories, event coverage, interviews, testimonials, short-form social clips, and editing existing footage into polished content ready to share.</p></div>
+          </details>
+          <details class="faq-item">
+            <summary>2. Do you work with small businesses and local organizations?</summary>
+            <div class="faq-answer"><p>Absolutely! I work with small businesses, organizations, and creators who want to tell their stories, showcase what they do, and connect with their audiences through video and social media content. Whether you have a specific project in mind or need help figuring out where to start, we can discuss your goals.</p></div>
+          </details>
+          <details class="faq-item">
+            <summary>3. What areas do you serve?</summary>
+            <div class="faq-answer"><p>I'm based in Southeast Michigan and available for local production projects throughout the area. I also work remotely with clients elsewhere, particularly on video editing, post-production, and content projects that can be completed using supplied footage and digital files.</p></div>
+          </details>
+          <details class="faq-item">
+            <summary>4. Can you create videos to promote my business or services?</summary>
+            <div class="faq-answer"><p>Yes! I can help create promotional videos that introduce your business, highlight your products or services, showcase your team, or share customer stories. The goal is to create clear, engaging content that helps potential customers understand what makes your business worth their attention.</p></div>
+          </details>
+          <details class="faq-item">
+            <summary>5. Can you help my business create content for social media?</summary>
+            <div class="faq-answer"><p>Yes! I can help your business build and manage its social media presence on platforms such as Instagram, Facebook, YouTube, and TikTok. Services can include creating social media accounts, producing video content, writing post descriptions and captions, creating thumbnails, adding relevant tags, and publishing posts. Whether you're starting from scratch or looking to improve your existing accounts, I can help you create and share content that showcases your business and connects with your audience.</p></div>
+          </details>
+          <details class="faq-item">
+            <summary>6. Can you edit footage that I have already recorded?</summary>
+            <div class="faq-answer"><p>Definitely. If you have existing footage that needs editing, I can help turn it into a more polished, engaging video. Depending on your project, this can include organizing footage, refining the story, improving audio, color correction, and preparing the finished video for its intended use.</p></div>
+          </details>
+          <details class="faq-item">
+            <summary>7. Can you turn one long video into multiple short clips?</summary>
+            <div class="faq-answer"><p>Yes. Existing interviews, presentations, events, and other longer videos can often be repurposed into shorter clips for social media. This gives you additional content to share without necessarily having to record something new for every post.</p></div>
+          </details>
+          <details class="faq-item">
+            <summary>8. Do you film interviews, testimonials, and business events?</summary>
+            <div class="faq-answer"><p>Yes. My video production services include interviews, testimonials, event coverage, and other business-related filming. We can discuss the location, intended audience, and footage you need to determine the right approach for your project.</p></div>
+          </details>
+          <details class="faq-item">
+            <summary>9. Do you offer both filming and editing?</summary>
+            <div class="faq-answer"><p>Yes. I offer production and post-production services, so I can help with filming a project locally in Southeast Michigan, editing footage you already have, or combining both into one project. For clients outside the area, remote editing and other suitable digital services may be available.</p></div>
+          </details>
+          <details class="faq-item">
+            <summary>10. How much does video production or editing cost?</summary>
+            <div class="faq-answer"><p>Every project is different, so pricing depends on the scope of work, production requirements, editing needs, and final deliverables. Contact me with a little information about your project, and I'll discuss your needs and provide a quote based on the work involved.</p></div>
+          </details>
+          <details class="faq-item">
+            <summary>11. How long does a typical video project take?</summary>
+            <div class="faq-answer"><p>Turnaround time varies depending on the project's length, complexity, production requirements, and feedback process. I'll discuss your timeline with you before work begins so we can establish realistic expectations and agree on a delivery schedule.</p></div>
+          </details>
+          <details class="faq-item">
+            <summary>12. Can you help me plan what content my business should create?</summary>
+            <div class="faq-answer"><p>Yes. You don't need to have every detail figured out before reaching out. We can discuss your business, audience, goals, and available resources, then explore content ideas that make sense for your needs and the platforms you want to use.</p></div>
+          </details>
+          <details class="faq-item">
+            <summary>13. Will my videos be formatted for different social media platforms?</summary>
+            <div class="faq-answer"><p>Yes. Videos can be prepared for their intended platforms, including vertical formats for short-form content and other suitable aspect ratios and export settings. We'll discuss where you plan to publish the content so the final files are prepared appropriately.</p></div>
+          </details>
+          <details class="faq-item">
+            <summary>14. How does the process work once I contact you?</summary>
+            <div class="faq-answer"><p>We start by discussing your goals, audience, timeline, and project requirements. From there, we'll plan the content and agree on the deliverables. I'll create or edit the content, share it for feedback, and make one round of revisions as agreed before delivering the finished files.</p></div>
+          </details>
+          <details class="faq-item">
+            <summary>15. How do I get started or request a quote?</summary>
+            <div class="faq-answer"><p>It's easy! Use the contact buttons on this website to email me. Tell me a little about your business, the kind of content you're looking for, and any deadlines or goals you have in mind. I'll follow up to discuss your project and the next steps.</p></div>
+          </details>
         </div>
       </div>
     </section>
