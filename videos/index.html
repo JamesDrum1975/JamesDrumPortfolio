@@ -31,5 +31,17 @@
         <source src="Have-A-Great-Day.mp4" type="video/mp4">
         Your browser does not support video playback.
     </video>
+    <script>
+        const video = document.querySelector("video");
+
+        video.muted = true;
+        video.defaultMuted = true;
+
+        window.addEventListener("load", () => {
+            video.play().catch(() => {
+                // Some browsers require a viewer interaction before playback.
+            });
+        });
+    </script>
 </body>
 </html>
