@@ -27,18 +27,9 @@
     </style>
 </head>
 <body>
-    <video controls autoplay playsinline preload="auto">
+    <video controls playsinline preload="metadata">
         <source src="Have-A-Great-Day.mp4" type="video/mp4">
         Your browser does not support video playback.
     </video>
-    <script>
-        const video = document.querySelector("video");
-
-        window.addEventListener("load", () => {
-            video.play().catch(() => {
-                // Browsers may block autoplay with sound until the viewer interacts.
-            });
-        });
-    </script>
 </body>
 </html>
