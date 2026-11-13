@@ -139,35 +139,118 @@
       .process-grid { grid-template-columns:1fr 1fr; }
       .strip-inner { gap:10px 18px; }
     }
+
+    /* Portfolio-first homepage refinement */
+    .topbar { background:rgba(8,12,18,.88); }
+    .nav { min-height:78px; }
+    .brand { font-size:1.08rem; letter-spacing:-.045em; }
+    .brand span { color:var(--blue-2); font-weight:650; margin-left:5px; letter-spacing:.08em; font-size:.68em; }
+    .navlinks { gap:27px; }
+    .navlinks a { transition:color .18s ease; }
+    .btn { border-radius:8px; box-shadow:0 8px 24px rgba(22,139,255,.14); }
+    .btn.secondary { box-shadow:none; }
+    .hero {
+      position:relative; isolation:isolate; padding:94px 0 84px;
+      background:radial-gradient(ellipse at 82% 35%,rgba(22,139,255,.15),transparent 42%),
+                 linear-gradient(115deg,#0b0e13 0%,#101722 62%,#0b0e13 100%);
+    }
+    .hero::before {
+      content:""; position:absolute; z-index:-1; inset:0; opacity:.22; pointer-events:none;
+      background-image:linear-gradient(rgba(255,255,255,.035) 1px,transparent 1px),
+                       linear-gradient(90deg,rgba(255,255,255,.035) 1px,transparent 1px);
+      background-size:56px 56px; mask-image:linear-gradient(to right,black,transparent 82%);
+    }
+    .hero-grid { grid-template-columns:.9fr 1.1fr; gap:54px; }
+    h1 { font-size:clamp(3rem,5.4vw,5.15rem); line-height:.99; max-width:610px; margin:18px 0 24px; }
+    .intro-copy { max-width:580px; line-height:1.75; }
+    .hero-actions { margin-top:32px; gap:14px; }
+    .hero-note { font-size:.83rem; letter-spacing:.015em; }
+    .hero-reel {
+      border-radius:16px; border:1px solid rgba(142,203,255,.28);
+      box-shadow:0 28px 80px rgba(0,0,0,.42),0 0 0 8px rgba(255,255,255,.018);
+      background:#05070a;
+    }
+    .hero-reel::after {
+      content:""; position:absolute; inset:0; pointer-events:none;
+      border:1px solid rgba(255,255,255,.08); border-radius:inherit;
+    }
+    .strip { background:#0d131c; }
+    .strip-inner { justify-content:center; gap:16px 42px; padding:17px 0; }
+    .audience-section { padding:34px 0 22px; background:#0b0e13; }
+    .audience-grid { display:grid; grid-template-columns:1fr 1fr; gap:16px; }
+    .audience-card {
+      position:relative; overflow:hidden; padding:30px 32px;
+      border:1px solid var(--line); border-radius:13px;
+      background:linear-gradient(135deg,rgba(21,32,46,.98),rgba(15,20,28,.98));
+    }
+    .audience-card::after {
+      content:""; position:absolute; width:190px; height:190px; right:-85px; bottom:-105px;
+      border:1px solid rgba(85,178,255,.2); border-radius:50%;
+      box-shadow:0 0 0 18px rgba(85,178,255,.025),0 0 0 38px rgba(85,178,255,.018);
+      pointer-events:none;
+    }
+    .audience-card-hiring { background:linear-gradient(135deg,rgba(15,25,38,.98),rgba(12,17,24,.98)); }
+    .audience-card h2 { margin:10px 0 9px; font-size:clamp(1.45rem,2.5vw,2rem); line-height:1.12; letter-spacing:-.04em; }
+    .audience-card p { color:var(--muted); margin:0 0 18px; max-width:520px; font-size:.96rem; }
+    .text-link { position:relative; z-index:1; display:inline-flex; gap:9px; align-items:center; color:var(--blue-2); text-decoration:none; font-weight:750; font-size:.93rem; }
+    .text-link:hover { color:#fff; }
+    section { scroll-margin-top:84px; }
+    .section-head { margin-bottom:34px; }
+    .service,.work-card { transition:transform .22s ease,border-color .22s ease,box-shadow .22s ease; }
+    .service:hover,.work-card:hover { transform:translateY(-4px); border-color:rgba(85,178,255,.35); box-shadow:0 16px 38px rgba(0,0,0,.2); }
+    .video-card { border-radius:11px; overflow:hidden; }
+    .video-frame { border:1px solid var(--line); border-radius:11px; overflow:hidden; }
+    .about-mark { background:radial-gradient(circle at 50% 35%,#1b2b40,#101720 68%); }
+    .contact { background:radial-gradient(ellipse at 12% 30%,rgba(22,139,255,.18),transparent 48%),linear-gradient(125deg,#101d2d,#0d1118 68%); }
+    a:focus-visible,button:focus-visible,summary:focus-visible { outline:2px solid var(--blue-2); outline-offset:4px; }
+    @media (max-width:850px) {
+      .hero { padding:64px 0 58px; }
+      .hero-grid { gap:30px; }
+      .audience-grid { grid-template-columns:1fr; }
+    }
+    @media (max-width:600px) {
+      .nav { min-height:66px; }
+      .brand { font-size:1rem; }
+      .navlinks { gap:10px; }
+      .nav-cta { font-size:.82rem; }
+      .hero { padding:48px 0 44px; }
+      h1 { font-size:clamp(2.85rem,13vw,4.2rem); }
+      .audience-card { padding:24px 22px; }
+      .strip-inner { justify-content:flex-start; }
+    }
+    @media (prefers-reduced-motion:reduce) {
+      html { scroll-behavior:auto; }
+      *,*::before,*::after { transition:none!important; animation:none!important; }
+    }
+
   </style>
 </head>
 <body>
   <header class="topbar">
     <div class="wrap nav">
-      <a class="brand" href="#top" aria-label="James Drum home">JAMES DRUM</a>
+      <a class="brand" href="#top" aria-label="James Drum Creative home">JAMES DRUM <span>CREATIVE</span></a>
       <nav class="navlinks" aria-label="Main navigation">
+        <a href="#work">Experience</a>
+        <a href="#videos">Portfolio</a>
         <a href="#services">Services</a>
-        <a href="#videos">Video Portfolio</a>
-        <a href="#faq">FAQs</a>
         <a href="#about">About</a>
-        <a class="btn nav-cta" href="#contact">Contact</a>
+        <a class="btn nav-cta" href="#contact">Let&#39;s Talk</a>
       </nav>
     </div>
   </header>
 
   <main id="top">
     <section class="hero">
-      <div class="wrap hero-grid">
-        <div>
-          <div class="eyebrow">Video Production · Social Content · Editing</div>
-          <h1>Make your business worth <span class="accent">watching</span></h1>
-          <p class="intro-copy">I'm James Drum. I help small businesses and organizations create professional video and social media content that showcases their work, introduces their people and gives customers a reason to pay attention.</p>
-          <p class="intro-copy">From filming and editing to turning existing footage into fresh content, I make it easier to share your story.</p>
+      <div          <div class="eyebrow">Video Producer · Editor · Creative</div>
+          <h1>Good stories deserve to be <span class="accent">seen.</span></h1>
+          <p class="intro-copy">I&#39;m James Drum, a hands-on video producer and editor who brings stories to life through thoughtful production, sharp editing and purposeful digital content.</p>
+          <p class="intro-copy">Whether you&#39;re building a brand, creating content for an audience or looking for an experienced creative to join your team, let&#39;s make something that matters.</p>
           <div class="hero-actions">
-            <a class="btn" href="#videos">View Video Portfolio <span aria-hidden="true">↘</span></a>
-            <a class="btn secondary email-link" href="mailto:realdrumvideo@gmail.com" data-gmail-to="realdrumvideo@gmail.com">Contact James</a>
+            <a class="btn" href="#videos">Explore My Work <span aria-hidden="true">↘</span></a>
+            <a class="btn secondary email-link" href="mailto:realdrumvideo@gmail.com?subject=Professional%20Opportunity" data-gmail-to="realdrumvideo@gmail.com" data-gmail-subject="Professional Opportunity">Discuss an Opportunity</a>
           </div>
-          <p class="hero-note">Available for local and remote projects</p>
+          <p class="hero-note">Based in Southeast Michigan · Available for local, remote and team opportunities</p>
+able for local and remote projects</p>
         </div>
         <div class="hero-photo hero-reel">
           <iframe src="https://www.youtube-nocookie.com/embed/sHWBvbbfeYA?rel=0&modestbranding=1" title="James Drum Creative demo reel" loading="eager" fetchpriority="high" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
@@ -183,6 +266,23 @@
         <span>Promotional storytelling</span>
       </div>
     </div>
+
+    <section class="audience-section" aria-label="Ways to work together">
+      <div class="wrap audience-grid">
+        <article class="audience-card">
+          <div class="eyebrow">For Businesses &amp; Organizations</div>
+          <h2>Bring your story to life.</h2>
+          <p>Need a promotional video, event coverage, social content or a reliable editing partner? Let&#39;s build content that helps your business connect with people.</p>
+          <a class="text-link" href="#services">Explore Creative Services <span aria-hidden="true">→</span></a>
+        </article>
+        <article class="audience-card audience-card-hiring">
+          <div class="eyebrow">For Employers &amp; Creative Teams</div>
+          <h2>Looking for a creative teammate?</h2>
+          <p>Explore my production work, editing experience and approach to getting projects from the first idea to the finished piece.</p>
+          <a class="text-link email-link" href="mailto:realdrumvideo@gmail.com?subject=Professional%20Opportunity" data-gmail-to="realdrumvideo@gmail.com" data-gmail-subject="Professional Opportunity">Let&#39;s discuss an opportunity <span aria-hidden="true">→</span></a>
+        </article>
+      </div>
+    </section>
 
     <section id="services">
       <div class="wrap">
