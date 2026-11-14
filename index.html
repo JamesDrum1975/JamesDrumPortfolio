@@ -220,7 +220,10 @@
     a:focus-visible,button:focus-visible,summary:focus-visible { outline:2px solid var(--blue-2); outline-offset:4px; }
     @media (max-width:850px) {
       .hero { padding:64px 0 58px; }
-      .hero-grid { gap:30px; }
+      /* Keep the hero copy and demo reel stacked on tablet and mobile.
+         This later refinement overrides the earlier responsive grid rule. */
+      .hero-grid { grid-template-columns:1fr; gap:30px; }
+      .hero-reel { width:100%; max-width:720px; justify-self:stretch; }
       .audience-grid { grid-template-columns:1fr; }
     }
     @media (max-width:600px) {
