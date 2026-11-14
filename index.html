@@ -86,8 +86,8 @@
     .client-logo-window { overflow:hidden; width:100%; padding:5px 0; }
     .client-logo-track { display:flex; width:max-content; animation:client-logo-scroll 32s linear infinite; }
     .client-logo-window:hover .client-logo-track, .client-logo-window:focus-within .client-logo-track { animation-play-state:paused; }
-    .client-logo-group { display:flex; flex:0 0 auto; gap:18px; padding-right:18px; }
-    .client-logo { flex:0 0 clamp(190px,22vw,250px); min-height:118px; display:flex; align-items:center; justify-content:center; padding:22px; border:1px solid var(--line); border-radius:12px; background:linear-gradient(145deg,var(--panel),#0f131a); text-decoration:none; transition:transform .2s ease,border-color .2s ease,background .2s ease; }
+    .client-logo-group { display:grid; grid-auto-flow:column; grid-auto-columns:clamp(190px,22vw,250px); flex:0 0 auto; gap:24px; padding-right:24px; }
+    .client-logo { width:100%; min-width:0; min-height:118px; display:flex; align-items:center; justify-content:center; padding:22px; border:1px solid var(--line); border-radius:12px; background:linear-gradient(145deg,var(--panel),#0f131a); text-decoration:none; transition:transform .2s ease,border-color .2s ease,background .2s ease; }
     .client-logo:hover { transform:translateY(-3px); border-color:rgba(85,178,255,.45); background:linear-gradient(145deg,#1a2635,#111923); }
     .client-logo img { display:block; max-width:100%; max-height:68px; width:auto; height:auto; object-fit:contain; }
     .client-logo-yatooma { padding:14px; }
@@ -235,7 +235,7 @@
       h1 { font-size:clamp(2.85rem,13vw,4.2rem); }
       .audience-card { padding:24px 22px; }
       .strip-inner { justify-content:flex-start; }
-      .client-logo-track { animation-duration:20s; }
+      .client-logo-track { animation-duration:24s; }
     }
     /* Touch devices should not get stuck paused after a logo is tapped. */
     @media (hover:none) {
